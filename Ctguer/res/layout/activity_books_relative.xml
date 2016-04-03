@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"    
+    xmlns:app="http://schemas.android.com/apk/res/com.ctguer"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"    
+    android:layout_weight="1"
+    android:background="#FFFFFF"
+    >
+    
+    <RelativeLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:id="@+id/definetitle"
+        android:background="#222222"
+        >
+        <TextView 
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="图书相关"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            
+            />
+    </RelativeLayout>
+  <com.ctguer.controller.PagerSlidingTabStrip 
+      	android:layout_below="@id/definetitle"
+        android:id="@+id/booktabs"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        app:pstsShouldExpand="true"
+        app:pstsUnderlineHeight="2dp"
+        app:pstsIndicatorHeight="2dp"
+        app:pstsIndicatorColor="@android:color/holo_blue_light"
+       	app:selectedTabTextColor="@android:color/holo_blue_light"
+        app:pstsDividerColor="@android:color/transparent"
+	    app:pstsTabBackground="@drawable/background_tab"
+	   	android:background="@android:color/white"       
+      />
+      
+    <android.support.v4.view.ViewPager
+        android:id="@+id/bookpager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/booktabs"
+        />
+
+</RelativeLayout>
+

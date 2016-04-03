@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+    android:orientation="vertical" 
+    android:background="@color/window_bg" 
+    android:layout_width="fill_parent" 
+    android:layout_height="fill_parent" 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:descendantFocusability="blocksDescendants"
+    >
+  
+     <RelativeLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:id="@+id/definetitle"
+        android:background="#222222"
+        >
+        <TextView 
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="教务相关"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:textSize="17dp"
+            android:textStyle="bold" 
+            />
+    </RelativeLayout>
+    <ScrollView 
+        android:scrollbarThumbVertical="@drawable/scrollbar_handle_vertical" 
+        android:focusable="true" 
+        android:focusableInTouchMode="true" 
+        android:visibility="visible" 
+        android:layout_width="fill_parent" 
+        android:layout_height="wrap_content" >    
+        <LinearLayout 
+            android:orientation="vertical" 
+            android:layout_width="fill_parent" 
+            android:layout_height="wrap_content">         
+ 
+            <LinearLayout 
+                style="@style/leba_bg_layout">                    
+                <!--  成绩查询 	-->   
+                <LinearLayout 
+                    style="@style/leba_bg_top_layout" android:onClick="grade_search_onclick">
+                    <TextView android:textSize="16.0dip" android:textColor="#ff333333" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:text="成绩查询" android:layout_weight="1.0" />
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="12.0dip" android:src="@drawable/setting_arrow"/>
+                </LinearLayout>
+                
+                <View android:background="@drawable/leba_shape_line" android:layout_width="fill_parent" android:layout_height="1.0px" />
+                
+                <!-- 课表查询 -->   
+                <LinearLayout 
+                    style="@style/leba_bg_bottom_layout" android:onClick="course_search_onclick">
+                    <TextView android:textSize="16.0dip" android:textColor="#ff333333" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:text="课表查询" android:layout_weight="1.0" />
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="12.0dip" android:src="@drawable/setting_arrow"/>
+                </LinearLayout>                             
+            </LinearLayout>
+            
+                
+                
+ 
+            <LinearLayout 
+                style="@style/leba_bg_layout">                  
+                <!--  一键评教 	-->   
+                <LinearLayout 
+                    style="@style/leba_bg_top_layout" android:onClick="evaluate_onclick">
+                    <TextView android:textSize="16.0dip" android:textColor="#ff333333" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:text="一键评教" android:layout_weight="1.0" />
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="12.0dip" android:src="@drawable/setting_arrow"/>
+                </LinearLayout>
+                
+                <View android:background="@drawable/leba_shape_line" android:layout_width="fill_parent" android:layout_height="1.0px" />
+                
+                 <!--  我的成绩	-->   
+                 <LinearLayout 
+                 	 style="@style/leba_bg_mid_layout" android:onClick="myrade_onclick">
+                    <TextView android:textSize="16.0dip" android:textColor="#ff333333" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:text="我的成绩" android:layout_weight="1.0" />
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="12.0dip" android:src="@drawable/setting_arrow"/>
+                 </LinearLayout>
+                
+                 <View android:background="@drawable/leba_shape_line" android:layout_width="fill_parent" android:layout_height="1.0px" />
+                      
+                <!-- 我的课表  -->   
+                <LinearLayout 
+                    style="@style/leba_bg_bottom_layout" android:onClick="mycourse_onclick">
+                    <TextView android:textSize="16.0dip" android:textColor="#ff333333" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:text="我的课表" android:layout_weight="1.0" />
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="12.0dip" android:src="@drawable/setting_arrow"/>
+                </LinearLayout>                             
+            </LinearLayout>
+ 
+              <LinearLayout 
+                style="@style/leba_bg_layout">                    
+                <!--  清除成绩 	-->   
+                <LinearLayout 
+                    style="@style/leba_bg_top_layout" android:id="@+id/LinearLayout1"  android:clickable="true">
+                    <TextView android:textSize="16.0dip" android:textColor="#ff333333" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:text="清除成绩" android:layout_weight="1.0" />
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="12.0dip" android:src="@drawable/setting_arrow"/>
+                </LinearLayout>
+                
+                <View android:background="@drawable/leba_shape_line" android:layout_width="fill_parent" android:layout_height="1.0px" />
+                
+                <!-- 清除课表-->   
+                <LinearLayout 
+                    style="@style/leba_bg_bottom_layout" android:id="@+id/LinearLayout2" >
+                    <TextView android:textSize="16.0dip" android:textColor="#ff333333" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:text="清除课表" android:layout_weight="1.0" />
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="12.0dip" android:src="@drawable/setting_arrow"/>
+                </LinearLayout>                             
+            </LinearLayout>
+        </LinearLayout>     
+    </ScrollView>
+    
+</LinearLayout>
+
+

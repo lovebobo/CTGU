@@ -1,0 +1,72 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${relativePackage}.${activityClass}" >
+	<RelativeLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:id="@+id/definetitle"
+        android:background="#18b4ed"
+        >
+        <TextView 
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="智能萌宠"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            
+            />
+    </RelativeLayout>
+    
+	<ListView 
+	    android:id="@+id/my_chat_listview"
+	    android:layout_below="@+id/definetitle"
+	    android:layout_above="@+id/ly_chat_bottom"
+	    android:layout_height="fill_parent"
+	    android:layout_width="fill_parent"
+	    android:layout_marginTop="10dp"
+	    android:cacheColorHint="#0000"
+        android:divider="@null"
+        android:dividerHeight="10dp"
+        android:scrollbars="none"
+	    >
+	    
+	</ListView>
+	
+	 <RelativeLayout
+        android:id="@+id/ly_chat_bottom"
+        android:layout_width="fill_parent"
+        android:layout_height="55dp"
+         android:layout_alignParentBottom="true"
+        android:background="@drawable/scrollbar_handle_vertical" 
+        >
+
+        <Button
+            android:id="@+id/id_chat_send"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/chat_send_btn"
+            android:onClick="sendMessage"
+            android:text="发送" />
+
+        <EditText
+            android:id="@+id/id_chat_msg"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@id/id_chat_send"
+            android:background="@drawable/login_edit_normal"
+            android:singleLine="true"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+	 
+</RelativeLayout>

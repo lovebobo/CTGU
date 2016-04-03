@@ -1,0 +1,34 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${relativePackage}.${activityClass}" 
+    android:orientation="vertical"
+    >
+    
+        <RelativeLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:id="@+id/definetitle"
+        android:background="#222222"
+        >
+        <TextView 
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="兼职消息"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            
+            /></RelativeLayout>
+<com.ctguer.controller.RTPullListView 
+    android:id="@+id/joblist"
+  
+      android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:dividerHeight="10dp"
+        android:divider="#FFFFFF"
+        android:overScrollMode="never"
+   />
+</LinearLayout>

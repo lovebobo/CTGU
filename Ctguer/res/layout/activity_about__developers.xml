@@ -1,0 +1,54 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${relativePackage}.${activityClass}" >
+
+    <RelativeLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:id="@+id/definetitle"
+        android:background="#18b4ed"
+        >
+        <TextView 
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="关于我们"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            
+            />
+    </RelativeLayout>
+    
+    
+	    <ImageView 
+	        android:layout_width="150dp"
+	        android:layout_height="150dp"
+	        android:layout_below="@+id/definetitle"
+	        android:layout_centerHorizontal="true"
+	        android:src="@drawable/schoollogo1"
+	        android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="20dp"
+	        android:id="@+id/about_us"
+	        />
+	    
+		 <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/introduce_textview"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/about_us"
+            android:text="计算机的童鞋都这么优秀和努力，咋都是单身呢？因为我们时间都为你们服务了哦，请放心使用此软件还有关心计信男童鞋哦！！"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:textSize="14dp"
+            android:textStyle="bold" 
+            />
+    
+		 
+</RelativeLayout>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/account_login" 
+        />
+    <EditText
+        android:id="@+id/account_login_name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="170dp"
+        android:gravity="center"
+        android:alpha="0.5"
+        android:hint="账号"
+        android:layout_width="270dp"
+        android:layout_height="40dp"
+        android:background="@drawable/edittext_style"
+        />
+    <EditText
+        android:hint="密码"
+        android:alpha="0.5"
+        android:gravity="center"
+        android:id="@+id/account_login_pw"
+        android:layout_width="270dp"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/account_login_name"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/edittext_style" 
+        />
+    <Button
+        android:id="@+id/login_button"
+        android:layout_width="270dp"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/account_login_pw"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/button_selector"
+        android:text="登陆"
+        android:textSize="15dp"
+        />
+    <TextView android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="没有账号，现在注册？"
+        android:id="@+id/login_textview"
+        android:textColor="#ffffff"
+        android:layout_below="@id/login_button"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="30dp"
+        />
+    <TextView android:layout_width="150dp"
+        android:layout_height="2dp"
+		android:background="#ffffff"
+		android:layout_centerHorizontal="true"
+        android:layout_below="@id/login_textview"
+        android:layout_marginTop="3dp"
+        android:layout_marginLeft="30dp"
+        />
+    
+    
+
+</RelativeLayout>

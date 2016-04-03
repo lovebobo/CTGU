@@ -1,0 +1,41 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/content_bg"
+    >
+    <!--  android:minHeight="?android:attr/listPreferredItemHeight" 设置每个item的最小高度 --> 
+    
+	<RelativeLayout 
+	    android:minHeight="100dp"	    
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_marginLeft="5dp"
+    	android:layout_marginRight="5dp"
+    	android:layout_marginTop="5dp"   
+	    >
+	<TextView 
+        android:id="@+id/news_summary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="三峡大学欢迎你！！"
+        android:textSize="18dp"
+        android:textColor="#575757"
+        android:layout_marginTop="5dp"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:layout_marginLeft="10dp"
+        />
+	<TextView
+	    android:id="@+id/news_arrow"
+	    android:layout_below="@+id/news_summary"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:text="时间"
+	    android:textColor="#bfbfbf"
+	    android:layout_marginTop="35dp"
+	    android:layout_marginBottom="5dp"
+	    android:layout_marginLeft="10dp"
+	    android:textSize="15dp"
+	    />
+	</RelativeLayout>
+</RelativeLayout>

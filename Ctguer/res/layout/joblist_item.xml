@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+<TextView
+    android:id="@+id/showcontext"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" 
+    android:textSize="18dp"
+    android:text="汇集了涉及到仿佛就死定了可打开了机科技市领导开房就立刻对双方"
+    android:singleLine="true"
+    android:ellipsize="end"
+   
+    />
+<TextView
+    android:id="@+id/showtime"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" 
+    android:textSize="18dp"
+    android:text="汇集了涉及到仿佛就死定了可打开了机科技市领导开房就立刻对双方"
+    android:singleLine="true"
+    android:ellipsize="end"
+   
+    />
+<TextView
+    android:id="@+id/showtype"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" 
+    android:textSize="18dp"
+    android:text="汇集了涉及到仿佛就死定了可打开了机科技市领导开房就立刻对双方"
+    android:singleLine="true"
+    android:ellipsize="end"
+   
+    />
+
+
+</LinearLayout>

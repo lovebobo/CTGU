@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- <com.ctguer.SlidingMenu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/id_menu"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:zhy="http://schemas.android.com/apk/res/com.ctguer"
+    android:layout_width="wrap_content"
+    android:layout_height="fill_parent"
+    android:scrollbars="none"
+    zhy:rightPadding="100dp" >
+     <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:orientation="horizontal" > -->
+
+        <!-- <include layout="@layout/layout_menu" /> -->
+		<TabHost 
+		    xmlns:android="http://schemas.android.com/apk/res/android"
+			android:id="@android:id/tabhost"
+		    android:layout_width="fill_parent"
+			android:layout_height="fill_parent">
+			<LinearLayout android:orientation="vertical"
+				android:layout_width="fill_parent"
+			    android:layout_height="fill_parent"
+			    android:id="@+id/FrameContent"
+			    >
+				<FrameLayout 
+				    android:id="@android:id/tabcontent"
+					android:layout_width="fill_parent" 
+					android:layout_height="0dip"
+					android:layout_weight="1" />
+		 
+				<TabWidget android:id="@android:id/tabs"
+					android:layout_width="fill_parent" 
+					android:layout_height="wrap_content"
+					android:layout_weight="0"  />
+			</LinearLayout>
+		</TabHost> 
+	<!-- </LinearLayout>
+</com.ctguer.SlidingMenu> -->

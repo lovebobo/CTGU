@@ -1,0 +1,88 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${relativePackage}.${activityClass}" >
+	 <RelativeLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:id="@+id/definetitle"
+        android:background="#18b4ed"
+        >
+        <TextView 
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="关于软件"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            
+            />
+    </RelativeLayout>
+    
+		<ScrollView 
+        android:scrollbarThumbVertical="@drawable/scrollbar_handle_vertical" 
+        android:focusable="true" 
+        android:focusableInTouchMode="true" 
+        android:visibility="visible" 
+        android:layout_width="fill_parent" 
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/definetitle"
+         >    
+        <LinearLayout 
+            android:orientation="vertical" 
+            android:layout_width="fill_parent" 
+            android:layout_height="wrap_content">         
+ 
+           <LinearLayout 
+                style="@style/leba_bg_layout"> 
+                <!-- 检查跟新 -->                   
+                <LinearLayout 
+                    style="@style/leba_bg_top_layout" android:onClick="checkupdate_onclick">
+                    <TextView android:textSize="16.0dip" android:textColor="#ff333333" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:text="检查跟新" android:layout_weight="1.0" />
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="12.0dip" android:src="@drawable/setting_arrow"/>
+                </LinearLayout>
+                
+                <View android:background="@drawable/leba_shape_line" android:layout_width="fill_parent" android:layout_height="1.0px" />
+                
+                  <!-- 清理缓存 -->  
+                <LinearLayout 
+                    style="@style/leba_bg_bottom_layout" android:onClick="cleancache_onclik">
+                    <TextView android:textSize="16.0dip" android:textColor="#ff333333" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:text="清除缓存" android:layout_weight="1.0" />
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="12.0dip" android:src="@drawable/setting_arrow"/>
+                </LinearLayout>                             
+            </LinearLayout>
+            
+                
+                
+ 
+           <LinearLayout 
+                style="@style/leba_bg_layout">                  
+                <LinearLayout 
+                    style="@style/leba_bg_top_layout">
+                    <TextView android:textSize="16.0dip" android:textColor="#ff333333" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:text="使用条款与隐私政策" android:layout_weight="1.0" />
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="12.0dip" android:src="@drawable/setting_arrow"/>
+                </LinearLayout>
+                
+                <View android:background="@drawable/leba_shape_line" android:layout_width="fill_parent" android:layout_height="1.0px" />
+                
+ 
+                 <LinearLayout 
+                 	 style="@style/leba_bg_mid_layout" android:onClick="share_onclick">
+                    <TextView android:textSize="16.0dip" android:textColor="#ff333333" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:text="推荐给好友" android:layout_weight="1.0" />
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="12.0dip" android:src="@drawable/setting_arrow"/>
+                 </LinearLayout>
+                
+                 <View android:background="@drawable/leba_shape_line" android:layout_width="fill_parent" android:layout_height="1.0px" />
+                      
+                <!-- 我的课表  -->   
+                <LinearLayout 
+                    style="@style/leba_bg_bottom_layout" android:onClick="About_us_onclick">
+                    <TextView android:textSize="16.0dip" android:textColor="#ff333333" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:text="关于我们" android:layout_weight="1.0" />
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="12.0dip" android:src="@drawable/setting_arrow"/>
+                </LinearLayout>                             
+            </LinearLayout>   
+         </LinearLayout>   
+    </ScrollView>
+</RelativeLayout>

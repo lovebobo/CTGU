@@ -1,0 +1,98 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${relativePackage}.${activityClass}" 
+    android:background="@drawable/background_blue">
+
+    <RelativeLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:id="@+id/definetitle"
+        android:background="#222222"
+        >
+        <TextView 
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="登陆教务"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            
+            />
+    </RelativeLayout>
+    <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_below="@id/definetitle"
+        android:id="@+id/ctgu_textview"
+        android:text="教务处登陆"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        />
+    <RelativeLayout 
+        
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ctgu_textview"
+    
+        android:padding="15dip"        
+	  	android:layout_margin="15dip" 
+        >
+        
+        <RelativeLayout 
+  	    android:layout_width="fill_parent"
+  		android:layout_height="wrap_content"
+  		android:padding="15dip"    
+  		android:id="@+id/ctgu_relativelout"    
+	  	android:layout_margin="15dip" >
+  		<!-- 账号 -->
+	  	<EditText 
+	  	    android:id="@+id/username_edit"
+	  	    android:layout_width="270dp"
+       	    android:layout_height="40dp"
+	  		android:minHeight="40dp"
+	  		android:layout_marginTop="5dp"
+	  		android:singleLine="true"
+	  		android:background="@drawable/edittext_style"
+	  		android:inputType="text"
+	  		android:hint="学号"
+	  		android:text="2012111121"
+	  		android:digits="1234567890"
+	  		android:gravity="center"
+	  		/>
+	    <!-- 密码 text -->
+	    
+	    <EditText 
+	        android:id="@+id/password_edit"
+	    	android:layout_width="270dp"
+        	android:layout_height="40dp"
+	    	android:layout_below="@id/username_edit"
+	    	android:password="true"
+	    	android:singleLine="true"
+	    	android:minHeight="40dp"
+	    	android:layout_marginTop="5dp"
+	    	android:background="@drawable/edittext_style"
+	    	android:inputType="textPassword"
+	    	android:hint="教务处密码"
+	    	android:gravity="center"
+	    	android:text="5385510"
+	    	android:digits="1234567890"
+	    	 />
+	    <!-- 登录button -->
+	    <Button 
+	    	android:layout_width="270dp"
+	    	android:layout_height="40dp"
+	    	android:layout_below="@id/password_edit"
+	    	android:layout_alignRight="@id/password_edit"
+	    	android:background="@drawable/button_selector"
+	    	android:layout_marginTop="10dp"
+	    	android:text="登陆"
+	    	android:onClick="ctgu_onclick_login"
+	    	/>
+  	</RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

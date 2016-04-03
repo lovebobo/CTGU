@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <RelativeLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        >
+        <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            
+            android:id="@+id/name_course"
+            >
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="课程名："
+                android:textSize="17dp"
+                android:layout_marginLeft="10dp"
+                />
+            <TextView 
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/name_course_textview"
+                android:text="安卓课程设计"
+                android:layout_marginLeft="5dp"
+                android:textSize="17dp"
+                />
+        </LinearLayout>
+         <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/name_course"
+            android:id="@+id/xuefen_course"
+            >
+              <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="成绩："
+                android:layout_marginLeft="15dp"
+                android:textSize="13dp"
+                />
+              
+               <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="90"
+                android:id="@+id/grade_textview"
+                android:textSize="13dp"
+                android:textColor="#FF3030"
+                />
+               
+                <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="学分："
+                android:layout_marginLeft="35dp"
+                android:textSize="13dp"
+                />
+              
+               <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/xuefen_textview"
+                android:text="2.0"
+                android:textSize="13dp"
+                android:textColor="#FF3030"
+                />
+         </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.ctguer.controller.BubbleLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="fill_parent"    
+    android:layout_weight="1"
+    android:padding="2dp"
+    android:background="#FFFFFF"
+ 
+    >
+    <RelativeLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="200dp"
+        android:id="@+id/ind_new_image"
+        android:layout_marginTop="3dp"
+        >
+	   <android.support.v4.view.ViewPager    
+	        android:id="@+id/viewPager"    
+	        android:layout_width="fill_parent"    
+	        android:layout_height="wrap_content" 	        
+	        />   
+        
+	  <!--  <TextView 
+	       android:id="@+id/new_textview"
+	       android:layout_width="wrap_content"
+	       android:layout_height="wrap_content"
+	       android:text="我是不是很美啊！！！"
+	       android:textSize="15dp"
+	       android:layout_marginBottom="15dp"
+	       android:layout_marginLeft="10dp"
+	       android:layout_alignParentBottom="true"
+	       android:textColor="#FFFFFF"
+	       />
+ -->
+        <LinearLayout    
+            android:id="@+id/viewGroup"    
+            android:layout_width="fill_parent"    
+            android:layout_height="wrap_content"    
+            android:layout_alignParentBottom="true"   
+            android:layout_marginBottom="7dp"    
+            android:gravity="center_horizontal"    
+            android:orientation="horizontal" >    
+        </LinearLayout>    
+                        
+    </RelativeLayout>
+    
+    <LinearLayout 
+        android:layout_below="@+id/ind_new_image"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        >
+        <GridView
+            android:id="@+id/ind_gridview" 
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+	        android:horizontalSpacing="10dp"
+	        android:listSelector="@drawable/grid_item_selector"	        
+	        android:numColumns="3"
+	        android:paddingLeft="20dp"
+	        android:paddingRight="20dp"
+	        android:stretchMode="columnWidth"
+	        android:verticalSpacing="20dp"
+	        android:scrollbars="none"
+            >
+            
+        </GridView>
+    </LinearLayout>
+    
+</com.ctguer.controller.BubbleLayout>
