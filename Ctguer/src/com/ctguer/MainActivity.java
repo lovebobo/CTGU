@@ -1,5 +1,6 @@
 package com.ctguer;
 
+import com.ctguer.controller.Codes;
 import com.ctguer.controller.FileIO;
 import com.ctguer.controller.RelativeUser;
 import com.ctguer.controller.URLs;
@@ -26,6 +27,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -179,7 +182,25 @@ public class MainActivity extends TabActivity implements View.OnClickListener{
 	}
 
 
+	Handler handler=new Handler()
+	{
 
+		@Override
+		public void handleMessage(Message msg) {
+			// TODO Auto-generated method stub
+			switch (msg.what) {
+			case Codes.logout_app_Suc:
+				FileIO.deleteFile(URLs.uresfile);
+				startActivity(new Intent(MainActivity.this,LoginAccount.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+				Toast.makeText(MainActivity.this, "注销成功", Toast.LENGTH_SHORT).show();
+				break;
+			case Codes.logout_app_Fail:
+				Toast.makeText(MainActivity.this, "请检查网络", Toast.LENGTH_SHORT).show();
+				break;
+			}
+		}
+		
+	};
 
 	private void setUpMenu() {
 		// TODO Auto-generated method stub
@@ -255,13 +276,16 @@ public class MainActivity extends TabActivity implements View.OnClickListener{
 	            intent.setClass(this, About_Us.class);
 	            startActivity(intent);
 	        }else if (view == itemSettings1){
-	        	FileIO.deleteFile(URLs.uresfile);
+	        	Object object=FileIO.getObjectFromFile(MainActivity.this, URLs.uresfile);
+	        	String username = (String) RelativeUser.getNameFromJson(object.toString(), "username");
+	        	String password = (String) RelativeUser.getNameFromJson(object.toString(), "password");
+        	        	
+	        	RelativeUser.handleLogonout(handler, username, password);
 	        	/*SharedPreferences sharedPreferences1 = getSharedPreferences("ifLoginStatus", getApplicationContext().MODE_PRIVATE); //私有数据
 				Editor editor = sharedPreferences1.edit();//获取编辑器
 				Management.curUser.setLoginstatusBoolean(true);
 				editor.putBoolean("status", Management.curUser.loginstatusBoolean);
 				editor.commit();//提交修改*/
-				startActivity(new Intent(MainActivity.this,LoginAccount.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
 	        }/*else if (view == itemSettings){
 	            changeFragment(new SettingsFragment());
 	        }*/

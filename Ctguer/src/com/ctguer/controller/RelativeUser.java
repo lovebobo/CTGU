@@ -120,6 +120,51 @@ public class RelativeUser {
 	}
 	
 	
+	//ÓÃ»§×¢Ïú
+	public static void handleLogonout(final Handler handler,String usename,String password) {
+		HashMap<String, String> localHashMap = new HashMap<String, String>();
+		localHashMap.put(Utility.toUtf8("username"), Utility.toUtf8(usename));
+		localHashMap.put(Utility.toUtf8("password"), Utility.toUtf8(password));
+		
+		taskPool.addHttpPostTask(URLs.userlogonout, localHashMap, new AbsHttpTask() {
+			
+			@Override
+			public void onError(Object msg) {
+				// TODO Auto-generated method stub
+				Utility.sendMsg(handler, Codes.login_app_Fail,msg);
+			}
+			
+			@Override
+			public void onError() {
+				// TODO Auto-generated method stub
+				Utility.sendMsg(handler, Codes.login_app_Fail);
+			}
+			
+			@Override
+			public void onComplete(InputStream paramInputStream) {
+				// TODO Auto-generated method stub
+				String result = Utility.streamToString(paramInputStream);
+				if (result == null || result.length() == 0)
+					return;
+				Object object = getNameFromJson(result, "message");
+				String result1 = null;
+				if (object != null) {
+					if ("success".equals(object.toString())){
+						
+						Utility.sendMsg(handler, Codes.logout_app_Suc,result1);
+					}
+				
+					else {
+						Utility.sendMsg(handler, Codes.logout_app_Fail,
+								getNameFromJson(result, "info"));
+					}
+				}
+				else Utility.sendMsg(handler, Codes.logout_app_Fail);
+			}
+		});
+		
+	}
+	
 	//String  to json
 	public static Object getNameFromJson(String result, String name)
 	{

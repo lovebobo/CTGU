@@ -87,6 +87,9 @@ public class Codes {
 	public static final int registerFail = 0x560;
 	public static final int login_app_Suc = 0x570;
 	public static final int login_app_Fail = 0x580;
+	public static final int logout_app_Suc = 0x590;
+	public static final int logout_app_Fail = 0x540;
+	
 	
 	
 }

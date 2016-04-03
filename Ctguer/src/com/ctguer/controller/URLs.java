@@ -97,6 +97,7 @@ public class URLs {
 	//用户相关
 	public static final String userredister = "http://114.215.85.210/ThinkCMF/index.php?g=Ctgu&m=User&a=douserregister";
 	public static final String userlogin = "http://114.215.85.210/ThinkCMF/index.php?g=Ctgu&m=User&a=dostudentlogin";
+	public static final String userlogonout = "http://114.215.85.210/ThinkCMF/index.php?g=Ctgu&m=User&a=logout";
 	
 	public static final String uresfile = "uresfile.dat";
 	
