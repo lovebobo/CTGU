@@ -12,7 +12,8 @@ import android.util.Log;
 public class FileIO {
 
 	
-	private final static String LOGTAG = "FileIO"; 
+	private final static String LOGTAG = "FileIO";
+	
 	public static void saveObjectToFile(Context ct, String filename, Object Object)
 	{
 		try 

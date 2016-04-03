@@ -81,4 +81,12 @@ public class Codes {
 	public static final int getjiajiaodetail=0x453;
 	public static final int getdongtaidetail=0x454;
 	
+	
+	//用户相关
+	public static final int registerSuc = 0x550;
+	public static final int registerFail = 0x560;
+	public static final int login_app_Suc = 0x570;
+	public static final int login_app_Fail = 0x580;
+	
+	
 }

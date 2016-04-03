@@ -3,7 +3,11 @@ package com.ctguer;
 import cn.smssdk.EventHandler;
 import cn.smssdk.SMSSDK;
 
+import com.ctguer.controller.Codes;
+import com.ctguer.controller.RelativeUser;
+
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -138,7 +142,35 @@ public class Register extends Activity {
 		SMSSDK.registerEventHandler(eventHandler);
 		ready=true;
 	}
+			
+	
+	//handle的定义
+ 	Handler handler1 = new Handler()
+ 	{
+		@Override
+		public void handleMessage(Message msg) {
+			// TODO Auto-generated method stub
+			int result = msg.what;
+			Object data = msg.obj;
+			//注册用户成功
+			if (result == Codes.registerSuc) {
+				Toast.makeText(Register.this, "注册成功："+result, Toast.LENGTH_SHORT).show();
+				Intent intent=new Intent(Register.this,LoginAccount.class);
+				intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+				intent.putExtra("username", edittext_phone.getText().toString());
+				intent.putExtra("password", edittext_pas.getText().toString());
+				startActivity(intent);
+				
+			} 		
+			
+			if (result == Codes.registerFail) {
+				Toast.makeText(Register.this, "注册失败："+result, Toast.LENGTH_SHORT).show();
+			}
+		}
 
+		
+ 		
+ 	};  
 		//handle的定义
 	 	Handler handler = new Handler()
 	 	{
@@ -152,6 +184,7 @@ public class Register extends Activity {
 					
 					if (event == SMSSDK.EVENT_SUBMIT_VERIFICATION_CODE) {
 						Toast.makeText(getApplicationContext(), "验证成功", Toast.LENGTH_SHORT).show();
+						RelativeUser.handleRegieter(handler1,edittext_phone.getText().toString(),edittext_pas.getText().toString());
 						
 					} else if (event == SMSSDK.EVENT_GET_VERIFICATION_CODE){
 						Toast.makeText(getApplicationContext(), "验证码已经发送", Toast.LENGTH_SHORT).show();
@@ -161,10 +194,14 @@ public class Register extends Activity {
 						Toast.makeText(getBaseContext(), "请检查网络原因", Toast.LENGTH_SHORT).show();
 					}
 				} else {
-					Toast.makeText(getBaseContext(), "请检查网络原因", Toast.LENGTH_SHORT).show();
-					((Throwable) data).printStackTrace();
+					//TODO
+					RelativeUser.handleRegieter(handler1,edittext_phone.getText().toString(),edittext_pas.getText().toString());
+					/*Toast.makeText(getBaseContext(), "请检查网络原因", Toast.LENGTH_SHORT).show();
+					((Throwable) data).printStackTrace();*/
 				}				
 			}
+
+			
 	 		
 	 	};  
 	 	

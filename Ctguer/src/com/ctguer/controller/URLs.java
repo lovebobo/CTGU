@@ -94,6 +94,17 @@ public class URLs {
 	//教务处新闻详细链接
 	public static final String jiaowudetail = "http://jwc.ctgu.edu.cn/";
 	
+	//用户相关
+	public static final String userredister = "http://114.215.85.210/ThinkCMF/index.php?g=Ctgu&m=User&a=douserregister";
+	public static final String userlogin = "http://114.215.85.210/ThinkCMF/index.php?g=Ctgu&m=User&a=dostudentlogin";
+	
+	public static final String uresfile = "uresfile.dat";
+	
+	
+	
+	
+	
+	
 	
 	//勤工俭学
 	public static final String xiaowaiDetailfile = "xiaowai.dat";

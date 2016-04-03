@@ -1,5 +1,10 @@
 package com.ctguer;
 
+import com.ctguer.controller.FileIO;
+import com.ctguer.controller.RelativeUser;
+import com.ctguer.controller.URLs;
+import com.ctguer.model.Management;
+import java.io.Serializable;
 import com.special.ResideMenu.ResideMenu;
 import com.special.ResideMenu.ResideMenuItem;
 import com.umeng.analytics.MobclickAgent;
@@ -19,6 +24,7 @@ import android.app.TabActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -53,6 +59,28 @@ public class MainActivity extends TabActivity implements View.OnClickListener{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		
+		
+		/*SharedPreferences sharedPreferences1 = getSharedPreferences("ifLoginStatus", Context.MODE_PRIVATE); //私有数据		
+		if(sharedPreferences1.getBoolean("status", true))
+		{
+			Intent intent = new Intent();
+			intent.setClass(MainActivity.this, LoginAccount.class);
+			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);  
+			startActivity(intent);
+			return;
+		}*/
+		Object object=FileIO.getObjectFromFile(MainActivity.this, URLs.uresfile);
+		if(null==object)
+		{
+			/*Object object1 = RelativeUser.getNameFromJson(object.toString(), "iflogin");*/
+			Intent intent = new Intent();
+			intent.setClass(MainActivity.this, LoginAccount.class);
+			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);  
+			startActivity(intent);
+			return;
+		}
+		
 		SharedPreferences sharedPreferences = getSharedPreferences("myLoginStatus", Context.MODE_PRIVATE); //私有数据		
 		if(sharedPreferences.getBoolean("status", true))
 		{
@@ -226,9 +254,15 @@ public class MainActivity extends TabActivity implements View.OnClickListener{
 	        }else if (view == itemProfile){
 	            intent.setClass(this, About_Us.class);
 	            startActivity(intent);
-	        }/*else if (view == itemCalendar){
-	            changeFragment(new CalendarFragment());
-	        }else if (view == itemSettings){
+	        }else if (view == itemSettings1){
+	        	FileIO.deleteFile(URLs.uresfile);
+	        	/*SharedPreferences sharedPreferences1 = getSharedPreferences("ifLoginStatus", getApplicationContext().MODE_PRIVATE); //私有数据
+				Editor editor = sharedPreferences1.edit();//获取编辑器
+				Management.curUser.setLoginstatusBoolean(true);
+				editor.putBoolean("status", Management.curUser.loginstatusBoolean);
+				editor.commit();//提交修改*/
+				startActivity(new Intent(MainActivity.this,LoginAccount.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+	        }/*else if (view == itemSettings){
 	            changeFragment(new SettingsFragment());
 	        }*/
 

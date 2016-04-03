@@ -22,6 +22,7 @@
         android:hint="密码"
         android:alpha="0.5"
         android:gravity="center"
+        android:password="true"
         android:id="@+id/account_login_pw"
         android:layout_width="270dp"
         android:layout_height="40dp"
