@@ -72,6 +72,13 @@ public class LoginAccount extends Activity {
 	
 	
 	
+	@Override
+	public void onBackPressed() {
+		// TODO Auto-generated method stub
+		 finish();  
+	     System.exit(0);  
+	}
+
 	private void initData() {
 		// TODO Auto-generated method stub
 		usename=getIntent().getStringExtra("username");
