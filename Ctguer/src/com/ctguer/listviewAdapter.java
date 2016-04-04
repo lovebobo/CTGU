@@ -7,6 +7,7 @@ import java.util.List;
 import com.ctguer.controller.Codes;
 import com.ctguer.controller.RelateCtgu;
 import com.ctguer.controller.URLs;
+import com.ctguer.model.Activity;
 import com.ctguer.model.Book;
 import com.ctguer.model.BorrowBook;
 import com.ctguer.model.LostFoundDetail;
@@ -16,6 +17,7 @@ import com.ctguer.model.NewsContent;
 import com.ctguer.model.PartTimeJob;
 
 import com.ctguer.model.Score;
+
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Handler;
@@ -119,8 +121,28 @@ public class listviewAdapter<T> extends ArrayAdapter<T>
 		if(mViewList.get(0).getClass() == PartTimeJob.class){
 			bindingJob((PartTimeJob)mViewList.get(position),convertView,position);
 		}
+		
+		if(mViewList.get(0).getClass() == Activity.class){
+			bindingActivity((Activity)mViewList.get(position),convertView,position);
+		}
 		return convertView;
 	}
+	
+	private void bindingActivity(Activity activity, View convertView, int position) {
+		// TODO Auto-generated method stub
+		((TextView)convertView.findViewById(R.id.id_textview)).setText(activity.getTitle());
+		((TextView)convertView.findViewById(R.id.time_textview)).setText(activity.getDatatime());
+		((TextView)convertView.findViewById(R.id.place)).setText(activity.getPlace());
+		((TextView)convertView.findViewById(R.id.time)).setText(activity.getDatatime());
+		((TextView)convertView.findViewById(R.id.content)).setText(activity.getContent());
+		
+		((TextView)convertView.findViewById(R.id.Limit_people_num)).setText(activity.getLimit_count()+"");
+		
+		((TextView)convertView.findViewById(R.id.sign_textview)).setText("已报名"+activity.getSign_count()+"人");
+		((TextView)convertView.findViewById(R.id.text_view_1)).setText(activity.getPraise_count()+"");
+		((TextView)convertView.findViewById(R.id.text_view_2)).setText(activity.getComment_count()+"");
+	}
+	
 	
 	//绑定勤工俭学
 	private void bindingJob(PartTimeJob job, View convertView,int position) {

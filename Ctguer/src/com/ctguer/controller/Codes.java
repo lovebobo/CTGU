@@ -90,6 +90,9 @@ public class Codes {
 	public static final int logout_app_Suc = 0x590;
 	public static final int logout_app_Fail = 0x540;
 	
+	//活动相关
+	public static final int getActivityListSuc = 0x600;
+	public static final int getActivityListFail = 0x610;
 	
 	
 }

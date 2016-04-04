@@ -2,13 +2,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="${relativePackage}.${activityClass}" >
+    tools:context="${relativePackage}.${activityClass}" 
+    android:background="#ffffff"
+    >
+	<android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/id_swipe_ly"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
 
-
- 	<ImageView 
- 	    android:layout_width="wrap_content"
- 	    android:layout_height="wrap_content"
- 	    android:background="@drawable/mvthr"
- 	    />
-   
+ 	<ListView 
+ 	    android:layout_width="match_parent"
+ 	    android:layout_height="match_parent"
+ 	    android:layout_margin="5dp"
+ 	    android:id="@+id/listview_activity"
+ 	    android:dividerHeight="15dp"
+ 	    android:background="#ffffff"
+ 	    android:divider="#ffffff"
+ 	    >
+ 	    
+ 	</ListView>
+	</android.support.v4.widget.SwipeRefreshLayout>
 </RelativeLayout>

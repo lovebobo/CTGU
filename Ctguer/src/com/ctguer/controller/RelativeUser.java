@@ -7,6 +7,7 @@ import java.util.HashMap;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.ctguer.model.Activity;
 import com.ctguer.model.User;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -164,6 +165,59 @@ public class RelativeUser {
 		});
 		
 	}
+	
+	//获取活动
+	public static void getActivityList(final Handler handler) {
+		taskPool.addHttpGetTask(URLs.getactivity, null, new AbsHttpTask() {
+			
+			@Override
+			public void onError(Object msg) {
+				// TODO Auto-generated method stub
+				Utility.sendMsg(handler, Codes.getActivityListFail,msg);
+			}
+			
+			@Override
+			public void onError() {
+				// TODO Auto-generated method stub
+				Utility.sendMsg(handler, Codes.getActivityListFail);
+			}
+			
+			@Override
+			public void onComplete(InputStream paramInputStream) {
+				// TODO Auto-generated method stub
+				String result = Utility.streamToString(paramInputStream);
+				Object object = getNameFromJson(result, "state");
+				if(object!=null)
+				{
+					if("success".equals(object))
+					{
+						try {
+			                result=new JSONObject(result)
+			                        .get("data")
+			                        .toString();
+			            } catch (JSONException e) {
+			                e.printStackTrace();
+			            }
+			            Gson gson = new GsonBuilder().create();
+			            
+			            ArrayList<Activity> obj = gson.fromJson(
+			                    result, new TypeToken<ArrayList<Activity>>(){}.getType());
+			            
+			            Utility.sendMsg(handler, Codes.getActivityListSuc,obj);
+					}
+					
+					else {
+						Utility.sendMsg(handler, Codes.getActivityListFail);
+					}
+				}
+				 
+
+			}
+		});
+	}
+	
+	
+	
 	
 	//String  to json
 	public static Object getNameFromJson(String result, String name)
