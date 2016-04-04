@@ -1,6 +1,7 @@
 package com.ctguer;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import com.ctguer.controller.Codes;
@@ -11,10 +12,14 @@ import com.ctguer.model.Activity;
 import com.ctguer.model.Course;
 import com.ctguer.model.LostFoundDetail;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -25,6 +30,7 @@ public class Association extends BaseActivity implements SwipeRefreshLayout.OnRe
 	private listviewAdapter<Activity> listviewadapter;
 	private ArrayList<Activity> activityList=new ArrayList<>();
 	private SwipeRefreshLayout mSwipeLayout;
+	private ImageView imageView_add;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -79,6 +85,18 @@ public class Association extends BaseActivity implements SwipeRefreshLayout.OnRe
 		if(object!=null){
 			activityList = (ArrayList<Activity>) object;
 		 }
+		imageView_add=(ImageView)findViewById(R.id.title_btn);
+		
+		imageView_add.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent intent=new Intent(Association.this,LaunchActivity.class);
+				startActivityForResult(intent, Codes.launchActivityListSuc);
+				//startActivity(intent);
+			}
+		});
 		
 		mSwipeLayout = (SwipeRefreshLayout) findViewById(R.id.id_swipe_ly);
 
@@ -89,6 +107,30 @@ public class Association extends BaseActivity implements SwipeRefreshLayout.OnRe
 		listView.setAdapter(listviewadapter);
 
 	}
+	
+	
+
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		// TODO Auto-generated method stub
+		switch (resultCode) { //resultCode为回传的标记，我在B中回传的是RESULT_OK
+		   case Codes.launchActivityListSuc:
+			   mSwipeLayout.post(new Runnable() {
+				
+				@Override
+				public void run() {
+					// TODO Auto-generated method stub
+					mSwipeLayout.setRefreshing(true);
+				}
+			});
+			onRefresh();				  
+		    break;
+		default:
+		    break;
+		    }
+	}
+
+
 
 	Handler handler=new Handler()
 	{
@@ -104,6 +146,7 @@ public class Association extends BaseActivity implements SwipeRefreshLayout.OnRe
 					for (Activity tmp : (List<Activity>)msg.obj) {
 						activityList.add(tmp);
 					}
+					Collections.reverse(activityList);
 				}
 				listviewadapter.notifyDataSetChanged();		
 				Toast.makeText(Association.this, "跟新成功", Toast.LENGTH_SHORT).show();

@@ -94,5 +94,10 @@ public class Codes {
 	public static final int getActivityListSuc = 0x600;
 	public static final int getActivityListFail = 0x610;
 	
+	public static final int launchActivityListSuc = 0x620;
+	public static final int launchActivityListFail = 0x630;
+	
+	
+	
 	
 }

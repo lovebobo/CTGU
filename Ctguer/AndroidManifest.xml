@@ -314,6 +314,10 @@
             android:name=".LoginAccount"
             android:label="@string/title_activity_login_account" >
         </activity>
+        <activity
+            android:name=".LaunchActivity"
+            android:label="@string/title_activity_launch" >
+        </activity>
     </application>
 
 </manifest>

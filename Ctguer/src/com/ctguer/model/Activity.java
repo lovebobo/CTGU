@@ -23,6 +23,16 @@ public class Activity implements Serializable{
 	
 	private String datatime;
 	
+	private String launchtime;
+	
+	public String getLaunchtime() {
+		return launchtime;
+	}
+
+	public void setLaunchtime(String launchtime) {
+		this.launchtime = launchtime;
+	}
+
 	public Activity() {
 		// TODO Auto-generated constructor stub
 	}

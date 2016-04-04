@@ -105,6 +105,8 @@ public class URLs {
 	public static final String getactivity = "http://114.215.85.210/ThinkCMF/index.php?g=Ctgu&m=User&a=activityGet";
 	public static final String activityfile = "activityfile.dat";
 	
+	public static final String launchactivity="http://114.215.85.210/ThinkCMF/index.php?g=Ctgu&m=User&a=launchActivity";
+	
 	
 	
 	

@@ -217,7 +217,59 @@ public class RelativeUser {
 	}
 	
 	
-	
+	//ÓÃ»§×¢Ïú
+		public static void launchActivity(final Handler handler,int Id
+				,int limit_count,String content,String title,String place,
+				String datatime,String launchtime
+				
+				) {
+			HashMap<String, String> localHashMap = new HashMap<String, String>();
+			localHashMap.put(Utility.toUtf8("Id"), Utility.toUtf8(Id+""));
+			localHashMap.put(Utility.toUtf8("limit_count"), Utility.toUtf8(limit_count+""));
+			localHashMap.put(Utility.toUtf8("content"), Utility.toUtf8(content));
+			localHashMap.put(Utility.toUtf8("title"), Utility.toUtf8(title));
+			localHashMap.put(Utility.toUtf8("place"), Utility.toUtf8(place));
+			localHashMap.put(Utility.toUtf8("datatime"), Utility.toUtf8(datatime));
+			localHashMap.put(Utility.toUtf8("launchtime"), Utility.toUtf8(launchtime));
+			
+			taskPool.addHttpPostTask(URLs.launchactivity, localHashMap, new AbsHttpTask() {
+				
+				@Override
+				public void onError(Object msg) {
+					// TODO Auto-generated method stub
+					Utility.sendMsg(handler, Codes.launchActivityListFail,msg);
+				}
+				
+				@Override
+				public void onError() {
+					// TODO Auto-generated method stub
+					Utility.sendMsg(handler, Codes.launchActivityListFail);
+				}
+				
+				@Override
+				public void onComplete(InputStream paramInputStream) {
+					// TODO Auto-generated method stub
+					String result = Utility.streamToString(paramInputStream);
+					if (result == null || result.length() == 0)
+						return;
+					Object object = getNameFromJson(result, "status");
+					if (object != null) {
+						if ("1".equals(object.toString())){
+							
+							Utility.sendMsg(handler, Codes.launchActivityListSuc);
+						}
+					
+						else {
+							Utility.sendMsg(handler, Codes.launchActivityListFail,
+									getNameFromJson(result, "info"));
+						}
+					}
+					else Utility.sendMsg(handler, Codes.launchActivityListFail);
+				}
+			});
+			
+		}
+		
 	
 	//String  to json
 	public static Object getNameFromJson(String result, String name)

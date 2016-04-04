@@ -39,5 +39,6 @@
     <string name="title_activity_chat_robot">ChatRobot</string>
     <string name="title_activity_showdongtai">ShowdongtaiActivity</string>
     <string name="title_activity_login_account">LoginAccount</string>
+    <string name="title_activity_launch">LaunchActivity</string>
 
 </resources>

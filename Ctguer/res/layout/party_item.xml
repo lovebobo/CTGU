@@ -2,12 +2,15 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F0FFFF"
+    android:background="@drawable/border"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
     >
     <RelativeLayout 
         android:layout_height="70dp"
         android:layout_width="match_parent"
-        android:id="@+id/RelativeLayout_head"      
+        android:id="@+id/RelativeLayout_head" 
+        android:background="#F0FFFF"     
         >
         <ImageView android:layout_width="50dp"
             	   android:layout_height="50dp" 
@@ -21,6 +24,7 @@
             android:layout_height="70dp"
             android:layout_toRightOf="@id/imageView_logo"
             android:layout_marginLeft="5dp"
+            android:background="#F0FFFF"
             
             >
             <RelativeLayout android:layout_width="match_parent"
@@ -51,6 +55,7 @@
             </RelativeLayout>
             <RelativeLayout android:layout_width="match_parent"
                 android:layout_height="35dp"
+                android:background="#F0FFFF"
                 android:id="@+id/LinearLayout_time"
                 android:layout_below="@id/LinearLayout_nick"
                 >
@@ -114,6 +119,7 @@
         
         <RelativeLayout android:layout_width="match_parent"
             android:layout_height="20dp"
+            android:background="#F0FFFF"
             android:id="@+id/RelativeLayout_main_time"
             android:layout_below="@id/RelativeLayout_place"
             >
@@ -140,6 +146,7 @@
         
          <RelativeLayout android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#F0FFFF"
             android:id="@+id/RelativeLayout_main_content"
             android:layout_below="@id/RelativeLayout_main_time"
             >
@@ -164,6 +171,7 @@
         
          <RelativeLayout android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#F0FFFF"
             android:id="@+id/RelativeLayout_main_type"
             android:layout_below="@id/RelativeLayout_main_content"
             >
@@ -190,6 +198,7 @@
 	<RelativeLayout 
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content"
+	    android:background="#F0FFFF"
 	    android:layout_below="@id/RelativeLayout_main"
 	    android:layout_marginTop="5dp"
 	    >

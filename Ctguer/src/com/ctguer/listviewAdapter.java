@@ -131,7 +131,7 @@ public class listviewAdapter<T> extends ArrayAdapter<T>
 	private void bindingActivity(Activity activity, View convertView, int position) {
 		// TODO Auto-generated method stub
 		((TextView)convertView.findViewById(R.id.id_textview)).setText(activity.getTitle());
-		((TextView)convertView.findViewById(R.id.time_textview)).setText(activity.getDatatime());
+		((TextView)convertView.findViewById(R.id.time_textview)).setText(activity.getLaunchtime());
 		((TextView)convertView.findViewById(R.id.place)).setText(activity.getPlace());
 		((TextView)convertView.findViewById(R.id.time)).setText(activity.getDatatime());
 		((TextView)convertView.findViewById(R.id.content)).setText(activity.getContent());
