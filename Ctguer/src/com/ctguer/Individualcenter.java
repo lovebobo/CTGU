@@ -190,7 +190,7 @@ public class Individualcenter extends Activity{
 				
 			case 5:
 				intent = new Intent(Individualcenter.this,
-						LoginAccount.class);	
+						Activity_Detail.class);	
 				startActivity(intent);
 				break;
 				

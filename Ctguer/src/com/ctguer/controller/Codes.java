@@ -97,7 +97,9 @@ public class Codes {
 	public static final int launchActivityListSuc = 0x620;
 	public static final int launchActivityListFail = 0x630;
 	
-	
+	public static final int getCommentListSuc = 0x640;
+	public static final int getCommentListFail = 0x650;
+	public static final int getCommentListFail1 = 0x660;
 	
 	
 }

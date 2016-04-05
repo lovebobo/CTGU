@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="${relativePackage}.${activityClass}" 
-    android:background="#ffffff"
+    android:background="#ececec"
     >
      <RelativeLayout  
         android:id="@+id/title_11"  
@@ -34,16 +34,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" 
         android:layout_below="@id/title_11"
+        android:layout_margin="5dp"
         >
 
  	<ListView 
  	    android:layout_width="match_parent"
- 	    android:layout_height="match_parent"
- 	    android:layout_margin="5dp"
+ 	    android:layout_height="match_parent"                      	    
  	    android:id="@+id/listview_activity"
  	    android:dividerHeight="15dp"
- 	    android:background="#ffffff"
- 	    android:divider="#ffffff"
+ 	    android:background="#ececec"
+ 	    android:divider="#ececec"
  	    android:scrollbars="none"
  	    >
  	    

@@ -19,6 +19,8 @@ import android.os.Message;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -105,6 +107,20 @@ public class Association extends BaseActivity implements SwipeRefreshLayout.OnRe
 				android.R.color.holo_orange_light, android.R.color.holo_red_light);
 		listviewadapter=new listviewAdapter<>(Association.this, R.layout.party_item, activityList);
 		listView.setAdapter(listviewadapter);
+		
+		listView.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+				// TODO Auto-generated method stub
+				Intent intent = new Intent();
+				intent.setClass(Association.this, Activity_Detail.class);
+				Bundle bundle = new Bundle();
+				bundle.putSerializable("Comment_obj", listviewadapter.getItem(position));
+				intent.putExtras(bundle);
+				startActivity(intent);	
+			}
+		});
 
 	}
 	

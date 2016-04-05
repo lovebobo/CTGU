@@ -40,5 +40,6 @@
     <string name="title_activity_showdongtai">ShowdongtaiActivity</string>
     <string name="title_activity_login_account">LoginAccount</string>
     <string name="title_activity_launch">LaunchActivity</string>
+    <string name="title_activity_activity__detail">Activity_Detail</string>
 
 </resources>

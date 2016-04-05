@@ -318,6 +318,10 @@
             android:name=".LaunchActivity"
             android:label="@string/title_activity_launch" >
         </activity>
+        <activity
+            android:name=".Activity_Detail"
+            android:label="@string/title_activity_activity__detail" >
+        </activity>
     </application>
 
 </manifest>

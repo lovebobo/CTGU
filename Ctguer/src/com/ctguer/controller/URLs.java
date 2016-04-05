@@ -107,7 +107,7 @@ public class URLs {
 	
 	public static final String launchactivity="http://114.215.85.210/ThinkCMF/index.php?g=Ctgu&m=User&a=launchActivity";
 	
-	
+	public static final String getCommentsList="http://114.215.85.210/ThinkCMF/index.php?g=Ctgu&m=User&a=commentGet";
 	
 	
 	

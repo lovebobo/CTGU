@@ -8,10 +8,12 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.ctguer.model.Activity;
+import com.ctguer.model.Comments;
 import com.ctguer.model.User;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
+import com.tencent.open.utils.Util.Statistic;
 
 import android.R.string;
 import android.os.Handler;
@@ -270,6 +272,62 @@ public class RelativeUser {
 			
 		}
 		
+		
+	//获取评论列表
+	public static void getCommentList(final Handler handler	,int activity_id) {
+		
+		HashMap<String, String> localHashMap = new HashMap<String, String>();
+		localHashMap.put(Utility.toUtf8("activity_id"), Utility.toUtf8(activity_id+""));
+		
+		taskPool.addHttpPostTask(URLs.getCommentsList, localHashMap, new AbsHttpTask() {
+			
+			@Override
+			public void onError(Object msg) {
+				// TODO Auto-generated method stub
+				Utility.sendMsg(handler, Codes.getCommentListFail,msg);
+			}
+			
+			@Override
+			public void onError() {
+				// TODO Auto-generated method stub
+				Utility.sendMsg(handler, Codes.getCommentListFail);
+			}
+			
+			@Override
+			public void onComplete(InputStream paramInputStream) {
+				// TODO Auto-generated method stub
+				String result = Utility.streamToString(paramInputStream);
+				if (result == null || result.length() == 0)
+					return;
+				Object object = getNameFromJson(result, "status");
+				
+				if (object != null) {
+					if ("1".equals(object.toString())){
+						try {
+			                result=new JSONObject(result)
+			                        .get("data")
+			                        .toString();
+			            } catch (JSONException e) {
+			                e.printStackTrace();
+			            }
+			            Gson gson = new GsonBuilder().create();
+			            
+			            ArrayList<Comments> obj = gson.fromJson(
+			                    result, new TypeToken<ArrayList<Comments>>(){}.getType());
+						Utility.sendMsg(handler, Codes.getCommentListSuc,obj);
+					}
+				
+					else {
+						Utility.sendMsg(handler, Codes.getCommentListFail1,
+								getNameFromJson(result, "暂无评论"));
+					}
+				}
+				else Utility.sendMsg(handler, Codes.getCommentListFail);
+			
+			}
+		});
+		
+	}
 	
 	//String  to json
 	public static Object getNameFromJson(String result, String name)
