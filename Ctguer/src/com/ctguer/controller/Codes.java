@@ -101,5 +101,9 @@ public class Codes {
 	public static final int getCommentListFail = 0x650;
 	public static final int getCommentListFail1 = 0x660;
 	
+	public static final int launchCommentFail = 0x670;
+	public static final int launchCommentSuc = 0x680;
+	
+	
 	
 }

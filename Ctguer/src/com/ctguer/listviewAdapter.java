@@ -10,6 +10,7 @@ import com.ctguer.controller.URLs;
 import com.ctguer.model.Activity;
 import com.ctguer.model.Book;
 import com.ctguer.model.BorrowBook;
+import com.ctguer.model.Comments;
 import com.ctguer.model.LostFoundDetail;
 
 import com.ctguer.model.NewsContent;
@@ -125,9 +126,19 @@ public class listviewAdapter<T> extends ArrayAdapter<T>
 		if(mViewList.get(0).getClass() == Activity.class){
 			bindingActivity((Activity)mViewList.get(position),convertView,position);
 		}
+		
+		if(mViewList.get(0).getClass() == Comments.class){
+			bindingComments((Comments)mViewList.get(position),convertView,position);
+		}
 		return convertView;
 	}
 	
+	private void bindingComments(Comments comments, View convertView, int position) {
+		// TODO Auto-generated method stub
+		((TextView)convertView.findViewById(R.id.text_view4_comment_item)).setText(comments.getComment_time());
+		((TextView)convertView.findViewById(R.id.text_view1_comment_item)).setText(comments.getComment_content());
+		
+	}
 	private void bindingActivity(Activity activity, View convertView, int position) {
 		// TODO Auto-generated method stub
 		((TextView)convertView.findViewById(R.id.id_textview)).setText(activity.getTitle());

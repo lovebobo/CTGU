@@ -272,6 +272,52 @@ public class RelativeUser {
 			
 		}
 		
+	//发表评论
+	public static void launchComments(final Handler handler,int Id,int activity_id, String comment_time,String comment_content  ) {
+		HashMap<String, String> localHashMap=new HashMap<>();
+		localHashMap.put(Utility.toUtf8("Id"), Utility.toUtf8(Id+""));
+		localHashMap.put(Utility.toUtf8("activity_id"), Utility.toUtf8(activity_id+""));
+		localHashMap.put(Utility.toUtf8("comment_content"), Utility.toUtf8(comment_content));
+		localHashMap.put(Utility.toUtf8("comment_time"), Utility.toUtf8(comment_time));
+		
+		taskPool.addHttpPostTask(URLs.launchComments, localHashMap, new AbsHttpTask() {
+			
+			@Override
+			public void onError(Object msg) {
+				// TODO Auto-generated method stub
+				 Utility.sendMsg(handler, Codes.launchCommentFail);
+			}
+			
+			@Override
+			public void onError() {
+				// TODO Auto-generated method stub
+				 Utility.sendMsg(handler, Codes.launchCommentFail);
+			}
+			
+			@Override
+			public void onComplete(InputStream paramInputStream) {
+				// TODO Auto-generated method stub
+				String result = Utility.streamToString(paramInputStream);
+				if (result == null || result.length() == 0)
+					return;
+				Object object = getNameFromJson(result, "status");
+				if (object != null) {
+					if ("1".equals(object.toString())){
+						
+						Utility.sendMsg(handler, Codes.launchCommentSuc);
+					}
+				
+					else {
+						Utility.sendMsg(handler, Codes.launchCommentFail,
+								getNameFromJson(result, "info"));
+					}
+				}
+				else Utility.sendMsg(handler, Codes.launchCommentFail);
+			
+			}
+		});
+	}
+		
 		
 	//获取评论列表
 	public static void getCommentList(final Handler handler	,int activity_id) {
