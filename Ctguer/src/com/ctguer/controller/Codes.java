@@ -104,6 +104,12 @@ public class Codes {
 	public static final int launchCommentFail = 0x670;
 	public static final int launchCommentSuc = 0x680;
 	
+	public static final int launchPraiseFail = 0x690;
+	public static final int launchPraiseSuc = 0x6100;
+	
+	public static final int signActivityFail = 0x6200;
+	public static final int signActivitySuc = 0x6300;
+	
 	
 	
 }

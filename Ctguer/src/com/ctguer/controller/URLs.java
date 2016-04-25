@@ -111,6 +111,9 @@ public class URLs {
 	
 	public static final String launchComments="http://114.215.85.210/ThinkCMF/index.php?g=Ctgu&m=User&a=launchComment";
 	
+	public static final String launchPraise="http://114.215.85.210/ThinkCMF/index.php?g=Ctgu&m=User&a=launchPraise";
+	
+	public static final String signActivity="http://114.215.85.210/ThinkCMF/index.php?g=Ctgu&m=User&a=activitySign";
 	
 	
 	

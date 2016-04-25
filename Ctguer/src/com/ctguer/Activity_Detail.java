@@ -12,6 +12,7 @@ import com.ctguer.controller.RelativeUser;
 import com.ctguer.controller.URLs;
 import com.ctguer.model.Comments;
 
+import android.R.integer;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
@@ -26,6 +27,7 @@ import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -64,6 +66,12 @@ public class Activity_Detail extends Activity {
 	private InputMethodManager inputMethodManager;
 	private EditText comment_edittext;//评论文本
 	
+	private ImageView imageView;
+	
+	private Button signbutton;
+	
+	private TextView signTextView;
+	
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -90,6 +98,20 @@ public class Activity_Detail extends Activity {
 		textView_signnum=(TextView)findViewById(R.id.sign_textview);
 		textView_commentnum=(TextView)findViewById(R.id.text_view_2);
 		textView_praisenum=(TextView)findViewById(R.id.text_view_1);
+		signTextView=(TextView)findViewById(R.id.sign_textview);
+		
+		imageView=(ImageView)findViewById(R.id.imageView3);
+		imageView.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				String string=FileIO.getObjectFromFile(Activity_Detail.this, URLs.uresfile).toString();
+				Object object = RelativeUser.getNameFromJson(string, "Id");
+				int Id=Integer.parseInt(object.toString());
+				RelativeUser.launchPraise(handler, Id,  activity_temp.getActivity_id());
+			}
+		});
 		
 		commentbutton=(Button)findViewById(R.id.commentButton);
 		commentbutton.setOnClickListener(new OnClickListener() {
@@ -114,6 +136,19 @@ public class Activity_Detail extends Activity {
 			}
 		});
 		comment_edittext=(EditText)findViewById(R.id.commentEdit);
+		
+		signbutton=(Button)findViewById(R.id.sign_button);
+		signbutton.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				String string=FileIO.getObjectFromFile(Activity_Detail.this, URLs.uresfile).toString();
+				Object object = RelativeUser.getNameFromJson(string, "Id");
+				int Id=Integer.parseInt(object.toString());
+				RelativeUser.signActivity(handler,  Id,  activity_temp.getActivity_id());
+			}
+		});
 	}
 
 	private void initData() {
@@ -169,6 +204,22 @@ public class Activity_Detail extends Activity {
 				comment_edittext.setText("");
 				inputMethodManager = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);   
 				inputMethodManager.hideSoftInputFromWindow(comment_edittext.getWindowToken(),0);   
+				break;	
+				
+			case Codes.launchPraiseSuc:
+				Toast.makeText(Activity_Detail.this, "点赞成功", Toast.LENGTH_SHORT).show();
+				textView_praisenum.setText((Integer.parseInt(textView_praisenum.getText().toString())+1)+"");
+				break;
+			case Codes.launchPraiseFail:
+				Toast.makeText(Activity_Detail.this, "点赞失败", Toast.LENGTH_SHORT).show();
+				break;
+				
+			case Codes.signActivitySuc:
+				Toast.makeText(Activity_Detail.this, "报名成功", Toast.LENGTH_SHORT).show();
+				signTextView.setText("已报名"+(activity_temp.getSign_count()+1)+"人");
+				break;
+			case Codes.signActivityFail:
+				Toast.makeText(Activity_Detail.this, "报名失败", Toast.LENGTH_SHORT).show();
 				break;	
 			}
 		}

@@ -36,10 +36,20 @@
             	   android:layout_centerVertical="true"
             	   android:layout_marginLeft="10dp"
             	   />
+          <Button android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="报名"
+                android:id="@+id/sign_button"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/button_selector"
+                />
        <RelativeLayout 
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:layout_toRightOf="@id/imageView_logo"
+            android:layout_toLeftOf="@id/sign_button"
             android:layout_marginLeft="5dp"
             
             >
@@ -97,8 +107,9 @@
                     />
             </RelativeLayout>
            
-        </RelativeLayout>
            
+        </RelativeLayout>
+      
     </RelativeLayout>
     
     <RelativeLayout android:layout_width="match_parent"

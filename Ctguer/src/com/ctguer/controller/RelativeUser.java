@@ -17,6 +17,7 @@ import com.tencent.open.utils.Util.Statistic;
 
 import android.R.string;
 import android.os.Handler;
+import cn.smssdk.app.NewAppReceiver;
 
 public class RelativeUser {
 	private static NetworkTask taskPool = new NetworkTask();
@@ -272,6 +273,97 @@ public class RelativeUser {
 			
 		}
 		
+	//活动点赞
+	public static void launchPraise(final Handler handler,int Id,int activity_id) {
+		HashMap<String, String> localHashMap=new HashMap<>();
+		localHashMap.put(Utility.toUtf8("Id"), Utility.toUtf8(Id+""));
+		localHashMap.put(Utility.toUtf8("activity_id"), Utility.toUtf8(activity_id+""));
+		
+		taskPool.addHttpPostTask(URLs.launchPraise, localHashMap, new AbsHttpTask() {
+			
+			@Override
+			public void onError(Object msg) {
+				// TODO Auto-generated method stub
+				Utility.sendMsg(handler, Codes.launchPraiseFail);
+			}
+			
+			@Override
+			public void onError() {
+				// TODO Auto-generated method stub
+				Utility.sendMsg(handler, Codes.launchPraiseFail);
+			}
+			
+			@Override
+			public void onComplete(InputStream paramInputStream) {
+				// TODO Auto-generated method stub
+				
+				String result = Utility.streamToString(paramInputStream);
+				if (result == null || result.length() == 0)
+					return;
+				Object object = getNameFromJson(result, "status");
+				if (object != null) {
+					if ("1".equals(object.toString())){
+						
+						Utility.sendMsg(handler, Codes.launchPraiseSuc);
+					}
+				
+					else {
+						Utility.sendMsg(handler, Codes.launchPraiseFail,
+								getNameFromJson(result, "info"));
+					}
+				}
+				else Utility.sendMsg(handler, Codes.launchPraiseFail);
+			
+			}
+		});
+	}	
+		
+		
+	//活动报名
+	public static void signActivity(final Handler handler,int Id,int activity_id) {
+		HashMap<String, String> localHashMap=new HashMap<>();
+		localHashMap.put(Utility.toUtf8("Id"), Utility.toUtf8(Id+""));
+		localHashMap.put(Utility.toUtf8("activity_id"), Utility.toUtf8(activity_id+""));
+		
+		taskPool.addHttpPostTask(URLs.signActivity, localHashMap, new AbsHttpTask() {
+			
+			@Override
+			public void onError(Object msg) {
+				// TODO Auto-generated method stub
+				Utility.sendMsg(handler, Codes.signActivityFail);
+			}
+			
+			@Override
+			public void onError() {
+				// TODO Auto-generated method stub
+				Utility.sendMsg(handler, Codes.signActivityFail);
+			}
+			
+			@Override
+			public void onComplete(InputStream paramInputStream) {
+				// TODO Auto-generated method stub
+				
+				String result = Utility.streamToString(paramInputStream);
+				if (result == null || result.length() == 0)
+					return;
+				Object object = getNameFromJson(result, "status");
+				if (object != null) {
+					if ("1".equals(object.toString())){
+						
+						Utility.sendMsg(handler, Codes.signActivitySuc);
+					}
+				
+					else {
+						Utility.sendMsg(handler, Codes.signActivityFail,
+								getNameFromJson(result, "info"));
+					}
+				}
+				else Utility.sendMsg(handler, Codes.signActivityFail);
+			
+			}
+		});
+	}	
+	
 	//发表评论
 	public static void launchComments(final Handler handler,int Id,int activity_id, String comment_time,String comment_content  ) {
 		HashMap<String, String> localHashMap=new HashMap<>();
