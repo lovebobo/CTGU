@@ -16,7 +16,8 @@ public class URLs {
 	public static final String CTGU_jw_2="http://210.42.38.26:81/jwc_glxt/";//81
 	
 	//Í¼Êé¹ÝµÇÂ½
-	public static final String CTGU_ts="http://192.168.52.9/";
+	//public static final String CTGU_ts="http://192.168.52.9/";
+	public static final String CTGU_ts="http://sulcmis.lib.ctgu.edu.cn/";
 	
 	public static String __VIEWSTATE;//
 	public static String __EVENTVALIDATION;//

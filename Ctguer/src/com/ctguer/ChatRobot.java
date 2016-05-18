@@ -69,7 +69,7 @@ public class ChatRobot extends Activity {
 			messageList.add(new ChatMessage(type.OUTPUT,"我喜欢你哦"));
 			}
 		}*/
-		messageList.add(new ChatMessage(type.INPUT,"欢迎来到三大萌宠，现在就可以开始调戏我了哦，come on,gay!"));
+		messageList.add(new ChatMessage(type.INPUT,"欢迎来到三大萌宠，现在就可以开始调戏我了哦，come on,guy!"));
 				
 	}
 	

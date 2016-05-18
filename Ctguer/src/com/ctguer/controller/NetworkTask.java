@@ -245,6 +245,8 @@ public class NetworkTask
 						
 						if(this.uriString.contains(URLs.CTGU_ts+"login.aspx"))
 						{
+							
+							//此处空指针异常
 							URLs.library_cookies1=(httpResponse.getFirstHeader("Set-Cookie").getValue()); 
 							this.absTask.onComplete(null);						
 							return;
