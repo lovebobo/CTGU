@@ -110,6 +110,9 @@ public class Codes {
 	public static final int signActivityFail = 0x6200;
 	public static final int signActivitySuc = 0x6300;
 	
+	public static final int getNewsListSuc = 0x6400;
+	public static final int getNewListFail = 0x6500;
+	
 	
 	
 }

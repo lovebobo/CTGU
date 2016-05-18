@@ -90,6 +90,7 @@ public class URLs {
 	//教务处考试栏目
 	public static final String examnewsdetail1 = "http://jwc.ctgu.edu.cn/news_more.asp?page=";
 	public static final String examnewsfile = "examnew.dat";
+	public static final String ajbnewsfile = "ajbnew.dat";
 	public static final String examnewsdetail2 = "&word=&lm=&lm2=69&lmname=0&open=1&n=30&hot=0&tj=0&soso=&dot=0&lryname=";
 	//教务处新闻详细链接
 	public static final String jiaowudetail = "http://jwc.ctgu.edu.cn/";
@@ -98,7 +99,7 @@ public class URLs {
 	public static final String userredister = "http://114.215.85.210/ThinkCMF/index.php?g=Ctgu&m=User&a=douserregister";
 	public static final String userlogin = "http://114.215.85.210/ThinkCMF/index.php?g=Ctgu&m=User&a=dostudentlogin";
 	public static final String userlogonout = "http://114.215.85.210/ThinkCMF/index.php?g=Ctgu&m=User&a=logout";
-	
+	public static final String getNewsList = "http://114.215.85.210/ThinkCMF/index.php?g=Ctgu&m=User&a=newsGet";
 	public static final String uresfile = "uresfile.dat";
 	
 	//活动相关

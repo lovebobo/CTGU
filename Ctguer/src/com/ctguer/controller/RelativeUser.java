@@ -9,6 +9,7 @@ import org.json.JSONObject;
 
 import com.ctguer.model.Activity;
 import com.ctguer.model.Comments;
+import com.ctguer.model.NewsContent;
 import com.ctguer.model.User;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -69,6 +70,59 @@ public class RelativeUser {
 		});
 	}
 	
+	
+	//获取ajb新闻
+	
+	
+	public static void getNewsList(final Handler handler) {
+		taskPool.addHttpGetTask(URLs.getNewsList, null, new AbsHttpTask() {
+			
+			@Override
+			public void onError(Object msg) {
+				// TODO Auto-generated method stub
+				Utility.sendMsg(handler, Codes.getNewListFail,msg);
+			}
+			
+			@Override
+			public void onError() {
+				// TODO Auto-generated method stub
+				Utility.sendMsg(handler, Codes.getNewListFail);
+			}
+			
+			@Override
+			public void onComplete(InputStream paramInputStream) {
+				// TODO Auto-generated method stub
+				String result = Utility.streamToString(paramInputStream);
+				if (result == null || result.length() == 0)
+					return;
+				Object object = getNameFromJson(result, "state");
+				
+				if (object != null) {
+					if ("success".equals(object.toString())){
+						try {
+			                result=new JSONObject(result)
+			                        .get("data")
+			                        .toString();
+			            } catch (JSONException e) {
+			                e.printStackTrace();
+			            }
+			            Gson gson = new GsonBuilder().create();
+			            
+			            ArrayList<NewsContent> obj = gson.fromJson(
+			                    result, new TypeToken<ArrayList<NewsContent>>(){}.getType());
+						Utility.sendMsg(handler, Codes.getNewsListSuc,obj);
+					}
+				
+
+					else {
+						Utility.sendMsg(handler, Codes.getNewListFail,
+								getNameFromJson(result, "info"));
+					}
+				}
+				else Utility.sendMsg(handler, Codes.registerFail);
+			}
+		});
+	}
 	
 	//用户登录
 	public static void handleLogin(final Handler handler,String usename,String password) {
