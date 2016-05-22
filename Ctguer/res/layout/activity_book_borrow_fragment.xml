@@ -20,7 +20,7 @@
 	        android:hint="图书馆账号(学号)"
 	        android:background="@drawable/edittext_style"
 	        android:gravity="center"
-	        android:text="2012112244"
+	        android:text="2012111135"
 	        />
 	    <EditText 
 	        android:layout_width="220dp" 
@@ -32,7 +32,7 @@
 	        android:hint="请输入密码"
 	        android:background="@drawable/edittext_style"
 	        android:gravity="center"
-	        android:text="1234"
+	        android:text="19940211"
 	        android:password="true"
 	        />
 	    <Button 

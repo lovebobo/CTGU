@@ -253,11 +253,12 @@ public class RelateCtgu {
 					Utility.toUtf8(""));
 			localHashMap.put(Utility.toUtf8("__EVENTTARGET"),
 					Utility.toUtf8(""));
-			
+			localHashMap.put(Utility.toUtf8("__LASTFOCUS"),
+					Utility.toUtf8(""));
 			localHashMap.put(Utility.toUtf8("__EVENTVALIDATION"),
-					Utility.toUtf8("/wEWBgK8j52iDQKOmK5RApX9wcYGAsP9wL8JApLM7boDAqW86pcIv2Xp1HPv+chf8iF1ODsxm2XoRF4="));
+					Utility.toUtf8("/wEWBgLk/fq8CQKOmK5RApX9wcYGAsP9wL8JApLM7boDAqW86pcISguW09QVsAe30A7rzyFnAaUxzA0="));
 			localHashMap.put(Utility.toUtf8("__VIEWSTATE"),
-					Utility.toUtf8("/wEPDwUKMTI3MjA1NDY3Mg9kFgJmD2QWDGYPZBYCAgEPFgIeBGhyZWYFDWNzcy9zdHlsZS5jc3NkAgEPDxYCHghJbWFnZVVybAUaflxpbWFnZXNcaGVhZGVyb3BhY3FnMS5naWZkZAICDw8WAh4EVGV4dAUh5LiJ5bOh5aSn5a2m5Zu+5Lmm6aaG5Lmm55uu5qOA57SiZGQCAw8PFgIfAgUbMjAxNeW5tDAz5pyIMTHml6Ug5pif5pyf5LiJZGQCBA9kFgRmD2QWBAIBDxYCHgtfIUl0ZW1Db3VudAIIFhICAQ9kFgJmDxUDC3NlYXJjaC5hc3B4AAznm67lvZXmo4DntKJkAgIPZBYCZg8VAxNwZXJpX25hdl9jbGFzcy5hc3B4AAzliIbnsbvlr7zoiKpkAgMPZBYCZg8VAw5ib29rX3JhbmsuYXNweAAM6K+75Lmm5oyH5byVZAIED2QWAmYPFQMJeHN0Yi5hc3B4AAzmlrDkuabpgJrmiqVkAgUPZBYCZg8VAxRyZWFkZXJyZWNvbW1lbmQuYXNweAAM6K+76ICF6I2Q6LStZAIGD2QWAmYPFQMTb3ZlcmR1ZWJvb2tzX2YuYXNweAAM5o+Q6YaS5pyN5YqhZAIHD2QWAmYPFQMSdXNlci91c2VyaW5mby5hc3B4AA/miJHnmoTlm77kuabppoZkAggPZBYCZg8VAwtyZWFkbWUuaHRtbAAM5L2/55So5pWZ56iLZAIJD2QWAgIBDxYCHgdWaXNpYmxlaGQCAw8WAh8DZmQCAQ9kFgQCAQ9kFghmDw9kFgIeDGF1dG9jb21wbGV0ZQUDb2ZmZAIBDw8WAh4MRXJyb3JNZXNzYWdlBQ/or7fovpPlhaXor4Hlj7dkZAIDDw8WAh8GBQ/or7fovpPlhaXlr4bnoIFkZAIFDw8WAh8CZWRkAgIPZBYKZg8QZGQWAWZkAgEPEGRkFgFmZAICDw9kFgIfBQUDb2ZmZAIDDw8WAh8GBQ/or7fovpPlhaXor4Hlj7dkZAIFD2QWAgICDw8WAh8GBQ/or7fovpPlhaXlr4bnoIFkZAIFDw8WAh8CBY8C54m55Yir5biu5Yqp77yaDQrkuIDkvZPljJbmo4DntKLmnLrovpPlhaXms5XliIfmjaLmraXpqqQ8YnI+DQrnrKzkuIDmraXvvJrlsIblhYnmoIfnva7kuo7nlYzpnaLlhoXnmoTmlofmnKzmoYblhoXjgIINCuesrOS6jOatpe+8muaMieKAnGN0cmwgK+epuuagvOKAneaJk+W8gOi+k+WFpeazleOAgg0K56ys5LiJ5q2l77ya5oyJIOKAnCBjdHJsICsgc2hpZnTigJwg5YiH5o2i6L6T5YWl5rOV44CCDQrkuK3oi7HmlofovpPlhaXms5XovazmjaLor7fmjInigJxzaGlmdOKAneOAgmRkZH3zOGB4wY6X34hJ/wRor1KbctuK"));
+					Utility.toUtf8("/wEPDwUKMTI4OTE2NzMwOQ9kFgJmD2QWDGYPZBYCAgEPFgIeBGhyZWYFDWNzcy9zdHlsZS5jc3NkAgEPDxYCHghJbWFnZVVybAUaflxpbWFnZXNcaGVhZGVyb3BhY3FnMS5naWZkZAICDw8WAh4EVGV4dAUh5LiJ5bOh5aSn5a2m5Zu+5Lmm6aaG5Lmm55uu5qOA57SiZGQCAw8PFgIfAgUbMjAxNuW5tDA15pyIMjLml6Ug5pif5pyf5pelZGQCBA9kFgRmD2QWBAIBDxYCHgtfIUl0ZW1Db3VudAIIFhICAQ9kFgJmDxUDC3NlYXJjaC5hc3B4AAznm67lvZXmo4DntKJkAgIPZBYCZg8VAxNwZXJpX25hdl9jbGFzcy5hc3B4AAzliIbnsbvlr7zoiKpkAgMPZBYCZg8VAw5ib29rX3JhbmsuYXNweAAM6K+75Lmm5oyH5byVZAIED2QWAmYPFQMJeHN0Yi5hc3B4AAzmlrDkuabpgJrmiqVkAgUPZBYCZg8VAxRyZWFkZXJyZWNvbW1lbmQuYXNweAAM6K+76ICF6I2Q6LStZAIGD2QWAmYPFQMTb3ZlcmR1ZWJvb2tzX2YuYXNweAAM5o+Q6YaS5pyN5YqhZAIHD2QWAmYPFQMSdXNlci91c2VyaW5mby5hc3B4AA/miJHnmoTlm77kuabppoZkAggPZBYCZg8VAwtyZWFkbWUuaHRtbAAM5L2/55So5pWZ56iLZAIJD2QWAgIBDxYCHgdWaXNpYmxlaGQCAw8WAh8DZmQCAQ9kFgQCAQ9kFghmDw9kFgIeDGF1dG9jb21wbGV0ZQUDb2ZmZAIBDw8WAh4MRXJyb3JNZXNzYWdlBQ/or7fovpPlhaXor4Hlj7dkZAIDDw8WAh8GBQ/or7fovpPlhaXlr4bnoIFkZAIFDw8WAh8CBTY8Zm9udCBjb2xvcj0iI2ZmMDAwMCI+5Y+j5Luk6ZSZ6K+vITwvZm9udD4mbmJzcDsmbmJzcDtkZAICD2QWCmYPEGRkFgFmZAIBDxBkZBYBZmQCAg8PZBYCHwUFA29mZmQCAw8PFgIfBgUP6K+36L6T5YWl6K+B5Y+3ZGQCBQ9kFgICAg8PFgIfBgUP6K+36L6T5YWl5a+G56CBZGQCBQ8PFgIfAgWPAueJueWIq+W4ruWKqe+8mg0K5LiA5L2T5YyW5qOA57Si5py66L6T5YWl5rOV5YiH5o2i5q2l6aqkPGJyPg0K56ys5LiA5q2l77ya5bCG5YWJ5qCH572u5LqO55WM6Z2i5YaF55qE5paH5pys5qGG5YaF44CCDQrnrKzkuozmraXvvJrmjInigJxjdHJsICvnqbrmoLzigJ3miZPlvIDovpPlhaXms5XjgIINCuesrOS4ieatpe+8muaMiSDigJwgY3RybCArIHNoaWZ04oCcIOWIh+aNoui+k+WFpeazleOAgg0K5Lit6Iux5paH6L6T5YWl5rOV6L2s5o2i6K+35oyJ4oCcc2hpZnTigJ3jgIJkZGTqDGd68LH7bcfE5dwipxHsexdWWg=="));
 			
 			localHashMap.put(Utility.toUtf8("ctl00$ContentPlaceHolder1$btnLogin_Lib"),
 					Utility.toUtf8("登录"));
@@ -317,13 +318,13 @@ public class RelateCtgu {
 						for(int i=0;i<course.size();i++){
 						BorrowBookList.add(new BorrowBook(course.get(i).text(), course.get(++i).text(), course.get(++i).select("a").attr("href"), course.get(i).text(), course.get(++i).text(), course.get(++i).text(), course.get(++i).text(), course.get(++i).text()));
 						}
-						if(BorrowBookList.size()>0)
-						{
+						//if(BorrowBookList.size()>0)
+						//{
 							Utility.sendMsg(handler,Codes.getLibraryBookSuc,BorrowBookList);
-						}
-						else {
+						//}
+						/*else {
 							Utility.sendMsg(handler,Codes.getLibraryBookFail);
-						}
+						}*/
 				}
 				
 				@Override
